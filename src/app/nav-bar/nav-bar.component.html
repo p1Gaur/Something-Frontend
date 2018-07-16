@@ -1,0 +1,23 @@
+<div class="topnav">
+  <a routerLink="/home">HOME</a>
+  <a routerLink="/about">ABOUT US</a>
+  <a routerLink="/ourservice">OUR SERVICES</a>
+  <a routerLink="/testimonial">TESTIMONIALS</a>
+  
+  <!-- localStorage.getItem('LoggedIn') === '1'//*ngIf="isLoggedIn$ | async"-->
+  <div *ngIf="isLoggedIn$ | async" class = "welcome">
+      <h4> Welcome User </h4>
+      <a class = "w3-button" routerLink = "/cart">CART</a> 
+      <button mat-raised-button color="warn" (click) = "logOut()">Logout</button>
+  </div>
+    <div *ngIf="!(isLoggedIn$ | async)" >
+        <button class="login" mat-raised-button (click)="openDialog()">Login</button>
+    </div>
+  
+
+  
+</div>
+
+
+
+    

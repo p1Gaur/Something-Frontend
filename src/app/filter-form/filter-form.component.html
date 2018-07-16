@@ -1,0 +1,60 @@
+<div class = "back">
+<div class="filterForm">
+    
+  
+  <div>
+      <label>Choose the starting date</label>
+      <mat-form-field class="example-full-width">
+         
+          
+          <input matInput [min]="minDate" [matDatepicker]="myDatepicker" [(ngModel)] = "filters.weddingDate">
+          <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+          <mat-datepicker class = "date"  #myDatepicker></mat-datepicker>
+          
+      </mat-form-field>
+  </div>
+  <div>
+      <label>Estimate Your Budget</label>
+      <mat-slider
+        thumbLabel
+        [displayWith]="formatLabel"
+        tickInterval="100"
+        min="100000"
+        max="100000000"
+        [invert]="invert"
+        [(ngModel)] = "filters.estBudget"> 
+      </mat-slider>
+    </div>
+
+    <div>
+        <label>No. of Guests  </label>
+        <mat-slider
+          thumbLabel
+          [displayWith]="formatLabel"
+          tickInterval="100"
+          min="10"
+          max="10000"
+          [invert]="invert"
+          [(ngModel)] = "filters.noOfGuest"> 
+        </mat-slider>
+    </div>
+
+    <div>
+        <label>No. of Days  </label>
+        <mat-slider
+          thumbLabel
+          [displayWith]="formatLabel"
+          tickInterval="1"
+          min="2"
+          max="20"
+          [invert]="invert"
+          [(ngModel)] = "filters.noOfDays"> 
+        </mat-slider>
+    </div>
+    <button mat-raised-button (click)="submitFilters()" [disabled]="isSubmitted">Submit</button>
+    <button mat-raised-button (click)="resetFilters()">Reset</button>
+    
+  <a routerLink = "/ourservice/venue"><button mat-fab color="primary" class = "buttonpostion" [disabled]="!isSubmitted">NEXT</button></a>
+
+ </div>
+</div>

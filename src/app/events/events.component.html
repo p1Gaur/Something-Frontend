@@ -1,0 +1,30 @@
+<mat-nav-list class = "sidenav">
+    <a mat-list-item routerLink="/ourservice/venue"   > Venue </a>
+    <a mat-list-item routerLink="/ourservice/catering" > Catering </a>
+    <a mat-list-item routerLink="/ourservice/events" class = "selected"> Events </a>
+</mat-nav-list>
+<div class = "full">
+<div *ngFor="let eachEvent of events" [value] = "events.eventId" >
+
+    <div id = "cardview" class="card card-image mb-3" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiRuwlMCm0xcGctaqiUnmKVjZyZPE4705i0dHUcZ2ypdSO1ydD);background-size: cover;opacity: 0.85;">
+
+  
+        <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+            <a routerLink = "/ourservice/events/items"> <button mat-fab color="primary" (click) = "selectThis(eachEvent.eventId,eachEvent.eventName)">{{eachEvent.eventName}}</button></a>
+        </div>
+        <!--<div>
+            <mat-form-field>
+                <mat-select placeholder="Items" [formControl]="items " multiple>
+                  <mat-option *ngFor="let item of itemList" [value]="item" >{{item}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>-->
+  
+    </div>
+<!-- Card -->
+
+<!-- Card -->
+</div>
+</div>
+
+

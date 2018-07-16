@@ -1,0 +1,13 @@
+#email{
+display: flex;
+}
+
+#password{
+    display: flex; 
+}
+
+input.mat-input-element {
+    height: 18px;
+    font-size: 14px;
+    margin-left: 5px;
+}

@@ -1,0 +1,46 @@
+<!--<mat-nav-list class = "sidenav">
+    <a mat-list-item href="/ourservice/culture" class = "selected"> Culture </a>
+    <a mat-list-item href="/ourservice/venue" > Venue </a>
+    <a mat-list-item href="/ourservice/catering" > Catering </a>
+</mat-nav-list>-->
+
+<!--<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+        bred for hunting.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>-->
+  <!--Grid column-->
+  <!-- Card -->
+<div class ="full">
+<div *ngFor="let eachCulture of cultures" [value] = "cultures.cultureId">
+
+    <div id = "cardview" class="card card-image mb-3" style="background-image: url(https://i.pinimg.com/originals/13/49/84/13498438bd825d0a550d84a58532203c.jpg);background-size: cover;opacity: 0.75;">
+
+  
+        <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+            <a routerLink = "/ourservice/filters"> <button mat-fab color="primary" (click) = "selectThis(eachCulture.cultureId)">{{eachCulture.cultureName}}</button></a>
+        </div>
+  
+    </div>
+<!-- Card -->
+
+<!-- Card -->
+</div>
+
+
+<!--<a routerLink = "/ourservice/filters"><button mat-fab color="primary" class = "buttonpostion" [disabled]="!isSubmitted" >NEXT</button></a>-->
+</div>

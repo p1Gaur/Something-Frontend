@@ -1,0 +1,38 @@
+
+<div class="w3-container">
+ 
+    <button class="w3-button w3-black" (click)="getCart()" onclick="document.getElementById('idCart').style.display='block'">SHOW MY CART</button>
+    <button class="w3-button w3-black" routerLink="/ourservice/events">GO TO EVENTS</button>
+    <div id="idCart" class="w3-modal">
+      <div class="w3-modal-content">
+        <header class="w3-container w3-teal"> 
+          <span onclick="document.getElementById('idCart').style.display='none'" 
+          class="w3-button w3-display-topright">&times;</span>
+          <h2>CART</h2>
+        </header>
+        <div>
+          <ul *ngIf="showVenue">
+          <li>
+              {{"Venue Name: "+venue.venueName+" Location: "+venue.venueLocation+" Capacity: "+venue.venueCapacity+" Price Per day: Rs."+venue.venuePrice}}
+            <span (click)="closeV()" class="closeL">&times;</span>
+          </li>
+      </ul>
+      <ul *ngIf="showCatering">
+          <li>
+              {{"Name "+catering.packageName+" Price Per Plate: Rs."+catering.pricePerPlate}}
+            <span (click)="closeC()" class="closeL">&times;</span>
+          </li>
+      </ul>
+    <ul *ngFor="let item of cartItem; index as i">
+        <li>
+            {{"Name: "+item.itemName+"(For "+item.eventName+") Type:"+item.itemType+" Price: "+item.itemPrice}}
+          <span (click)="closeItem(i)" class="closeL">&times;</span>
+        </li>
+    </ul>
+        </div>
+        <footer class="w3-container w3-teal">
+          <button class="w3-button w3-blue button" (click)="checkOut()" routerLink="/home" >CheckOut</button>
+        </footer>
+      </div>
+    </div>
+  </div>

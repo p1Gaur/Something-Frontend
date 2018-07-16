@@ -1,0 +1,11 @@
+.about{
+    background-image: url('https://i.pinimg.com/originals/69/33/52/693352221bc15ef32ea651ee9a65cfa8.jpg');
+    background-size: cover;
+    height : 600px;
+    color:#ffffff;
+    text-align: center;
+    text-align: left;
+    padding: 12px;
+    font-size: 16px;
+    overflow-y: scroll;   
+}

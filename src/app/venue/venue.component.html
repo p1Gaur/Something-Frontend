@@ -1,0 +1,31 @@
+<mat-nav-list class = "sidenav">
+    <a mat-list-item routerLink="/ourservice/venue"  class = "selected" > Venue </a>
+    <a mat-list-item routerLink="/ourservice/catering" > Catering </a>
+    <a mat-list-item routerLink="/ourservice/events" > Events </a>
+</mat-nav-list>
+
+<div class="full">
+    <div>
+        <label>Venue   </label>
+        <mat-form-field>
+            <mat-select [(value)]="selected">
+              <mat-option value="Delhi">Delhi</mat-option>
+              <mat-option value="Udaipur">Udaipur</mat-option>
+              <mat-option value="Bangalore">Bangalore</mat-option>
+              <mat-option value="Mumbai">Mumbai</mat-option>
+              <mat-option value="Goa">Goa</mat-option>
+              <mat-option value="Hyderabad">Hyderabad</mat-option>
+            </mat-select>
+        </mat-form-field>
+          
+        <p>You selected: {{selected}}</p>
+    </div>
+      <button (click) = "selectLocation()"> Submit Location</button>
+      <mat-radio-group class="list" [(ngModel)]="venueId">
+            <mat-radio-button class="example-radio-button" *ngFor="let eachVenue of venueDetails" [value]="eachVenue.venueId">
+                Venue: {{eachVenue.venueName}}   Venue Type: {{eachVenue.venueType}}   Price: {{eachVenue.venuePrice}} 
+            </mat-radio-button>
+     </mat-radio-group>
+     <div class="example-selected-value">Your selection id is: {{venueId}}</div>
+     <button (click) = "selectVenue()"> Submit Venue</button>
+</div>

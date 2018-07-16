@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Welcome Wedenger!!</h1>
+<div mat-dialog-content>
+  <p>Please login for a better experience </p>
+
+  
+<mat-form-field>
+    <div id="email"><label style="width: 107px;">Email</label><input matInput [(ngModel)]="sendData.email" type = "email" ></div>
+    <div id="password"><label style="width: 107px;">Password</label><input matInput [(ngModel)]="sendData.password" type = "password" ></div>
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <!--<button mat-button [mat-dialog-close]="data.emailId" [mat-dialog-close]="data.password" cdkFocusInitial>LOGIN</button>-->
+  <button mat-button (click) = "onLogin()" type = "submit">LOGIN</button>
+  <button mat-button (click)="onNoClick()">Maybe later?</button>
+</div>
+Don't have an account yet? <a routerLink = "/signup"> <button mat-button (click)="onSignup()">Signup!</button> </a>

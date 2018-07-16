@@ -1,0 +1,40 @@
+<mat-nav-list class = "sidenav">
+    <a mat-list-item routerLink="/ourservice/venue"   > Venue </a>
+    <a mat-list-item routerLink="/ourservice/catering" > Catering </a>
+    <a mat-list-item routerLink="/ourservice/events" class = "selected"> Events </a>
+</mat-nav-list>
+<div class ="full">
+<h1>
+  The Event selected is {{this.eventName}}
+</h1>
+
+<div  *ngFor="let eachItem of items" >
+  <div *ngIf = "eachItem.itemType === 'decor'">
+    <mat-selection-list  #decor  >
+      <mat-list-option matTooltip="Select to add to Cart" [selected]="eachItem.selected" 
+      (click)="onAreaListControlChanged(decor)" [value]="eachItem.itemId" >
+        {{eachItem.itemName}}  (decor)
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+  <div *ngIf = "eachItem.itemType === 'grooming'">
+    <mat-selection-list #grooming >
+      <mat-list-option matTooltip="Select to add to Cart" [selected]="eachItem.selected" 
+      (click)="onAreaListControlChanged(grooming)" [value]="eachItem.itemId">
+        {{eachItem.itemName}}  (grooming)
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+  <div *ngIf = "eachItem.itemType === 'logistics'">
+    <mat-selection-list #logistics >
+      <mat-list-option matTooltip="Select to add to Cart" [selected]="eachItem.selected" 
+      (click)="onAreaListControlChanged(logistics)" [value]="eachItem.itemId">
+        {{eachItem.itemName}}  (logistics)
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+  
+     
+</div>
+
+</div>

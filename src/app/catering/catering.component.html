@@ -1,0 +1,15 @@
+<mat-nav-list class = "sidenav">
+    <a mat-list-item routerLink="/ourservice/venue" > Venue </a>
+    <a mat-list-item routerLink="/ourservice/catering" class = "selected"> Catering </a>
+    <a mat-list-item routerLink="/ourservice/events" > Events </a>
+</mat-nav-list>
+
+<div class = "full">
+        <mat-radio-group class="list" [(ngModel)]="menuId">
+              <mat-radio-button class="example-radio-button" *ngFor="let eachItem of menuDetails" [value]="eachItem.menuId">
+                  Package: {{eachItem.packageName}}   Description: {{eachItem.menuDescription}}   Price per plate:{{eachItem.pricePerPlate}}    No. of plates: {{eachItem.noOfPlates}}   Package type: {{eachItem.packageType}}
+              </mat-radio-button>
+       </mat-radio-group>
+       <div class="example-selected-value">Your selection id is: {{menuId}}</div>
+       <button (click) = "selectMenu()"> Submit Menu</button>
+</div>

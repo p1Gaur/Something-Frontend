@@ -1,0 +1,11 @@
+
+.imageshow{
+    height: 100px;
+    widows: 100px;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden !important;
+}

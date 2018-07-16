@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html,body { 
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .basic-container {
+    padding: 30px;
+  }
+  
+  .version-info {
+    font-size: 8pt;
+    float: right;
+  }
+
+  .mat-form-field-appearance-legacy .mat-form-field-prefix .mat-datepicker-toggle-default-icon, .mat-form-field-appearance-legacy .mat-form-field-suffix .mat-datepicker-toggle-default-icon {
+    width: 1em;
+    color: white !important;
+}
+.mat-form-field-flex {
+  display: inline-flex;
+  align-items: baseline;
+  box-sizing: border-box;
+  width: 100%;
+  border-bottom: 2px solid white;
+}
+
+.mat-slider-horizontal .mat-slider-wrapper {
+  height: 2px;
+  top: 23px;
+  left: 8px;
+  right: 8px;
+  color: white;
+  background: white;
+}
+ .mat-slider-thumb {
+  cursor: -webkit-grab;
+  cursor: grab;
+  background: white;
+}
+.mat-raised-button {
+margin-left:5px !important;
+}
