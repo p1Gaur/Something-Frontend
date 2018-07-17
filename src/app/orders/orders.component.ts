@@ -31,8 +31,8 @@ export class OrdersComponent implements OnInit {
   
 getOrder() {
   this.userId = localStorage.getItem('currentUserId');
-  this.orderId='239588//072872';
-  //localStorage.getItem('currentOrderId');    
+  this.orderId=localStorage.getItem('currentOrderId');
+  console.log(localStorage.getItem('currentOrderId'));    
   console.log(this.orderId+" "+this.userId);
   //localStorage.getItem('currentOrderId');
   this.orderService.getOrderDetails(this.userId,this.orderId).subscribe(data => this.fillOrderDetails(data))
