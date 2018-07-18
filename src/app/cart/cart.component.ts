@@ -54,6 +54,7 @@ closeItem(i) {
 checkOut() {
   var flag: string;
   this.cartService.checkOut(this.cartInfo).subscribe(data => {localStorage.setItem('currentOrderId',data);console.log(data)});
+
 }
 
 
