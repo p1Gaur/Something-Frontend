@@ -10,14 +10,14 @@
           class="w3-button w3-display-topright">&times;</span>
           <h2>CART</h2>
         </header>
-        <div>
-          <ul *ngIf="showVenue">
+        <div >
+          <ul *ngIf="showVenue" id="venuemodal" #venueList>
           <li>
               {{"Venue Name: "+venue.venueName+" Location: "+venue.venueLocation+" Capacity: "+venue.venueCapacity+" Price Per day: Rs."+venue.venuePrice}}
             <span (click)="closeV()" class="closeL">&times;</span>
           </li>
       </ul>
-      <ul *ngIf="showCatering">
+      <ul *ngIf="showCatering" #cateringList>
           <li>
               {{"Name "+catering.packageName+" Price Per Plate: Rs."+catering.pricePerPlate}}
             <span (click)="closeC()" class="closeL">&times;</span>

@@ -11,8 +11,8 @@ import { OurServicesComponent } from './our-services/our-services.component';
 import { HttpClient, HttpHeaders,HttpClientModule  } from '@angular/common/http';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import {CdkTableModule} from '@angular/cdk/table';
-import {CdkTreeModule} from '@angular/cdk/tree';
+//import {CdkTableModule} from '@angular/cdk';
+//import {CdkTreeModule} from '@angular/cdk';
 import {MAT_DIALOG_DEFAULT_OPTIONS,
   MatAutocompleteModule,
   MatBadgeModule,
@@ -68,8 +68,10 @@ import { AppSettings } from './URLMapping';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { UserregistrationComponent } from './userregistration/userregistration.component';
 import { CartComponent } from './cart/cart.component';
+import { AdmincultureComponent } from './adminculture/adminculture.component';
+import { AdmineventsComponent } from './adminevents/adminevents.component';
+import {AgmCoreModule} from '@agm/core';
 import { OrdersComponent } from './orders/orders.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -89,7 +91,9 @@ import { OrdersComponent } from './orders/orders.component';
     SnackbarComponent,
     UserregistrationComponent,
     CartComponent,
-    OrdersComponent,
+    AdmincultureComponent,
+    AdmineventsComponent,
+    OrdersComponent
     //HomeComponent
 
   ],
@@ -135,6 +139,11 @@ import { OrdersComponent } from './orders/orders.component';
     MatTooltipModule,
     MatTreeModule,
     BrowserAnimationsModule,
+    AgmCoreModule.forRoot(
+      {
+        apiKey:  'AIzaSyBZPFMaCq7P9ouK_XzKpQm2ELJJZuSKwhE'
+      }
+    ),
     HttpClientModule,
     SliderModule,
     LocalStorageModule.withConfig({

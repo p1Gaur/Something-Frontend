@@ -5,8 +5,8 @@
 </mat-nav-list>
 
 <div class="full">
-    <div>
-        <label>Venue   </label>
+    <div class="venueContent">
+        <!-- <label>Venue   </label>
         <mat-form-field>
             <mat-select [(value)]="selected">
               <mat-option value="Delhi">Delhi</mat-option>
@@ -16,10 +16,10 @@
               <mat-option value="Goa">Goa</mat-option>
               <mat-option value="Hyderabad">Hyderabad</mat-option>
             </mat-select>
-        </mat-form-field>
-          
-        <p>You selected: {{selected}}</p>
-    </div>
+        </mat-form-field> -->
+
+    
+    <p>You selected: {{selected}}</p>
       <button (click) = "selectLocation()"> Submit Location</button>
       <mat-radio-group class="list" [(ngModel)]="venueId">
             <mat-radio-button class="example-radio-button" *ngFor="let eachVenue of venueDetails" [value]="eachVenue.venueId">
@@ -28,4 +28,17 @@
      </mat-radio-group>
      <div class="example-selected-value">Your selection id is: {{venueId}}</div>
      <button (click) = "selectVenue()"> Submit Venue</button>
-</div>
+     <br>
+     <br>
+     <p> Click on a marker to select the wedding location</p>
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="true" (mapClick)="mapClicked($event)">
+
+            <agm-marker *ngFor="let m of markers; let i = index;" (markerClick)="clickedMarker(m.label, i)" [latitude]="m.lat" [longitude]="m.lng"
+             [label]="m.label" >
+        
+            </agm-marker>
+        
+        
+        </agm-map>
+    </div>
+    </div>

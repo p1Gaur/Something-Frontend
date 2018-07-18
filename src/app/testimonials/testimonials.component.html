@@ -1,3 +1,32 @@
 <div class = "full">
+    <div id="card-holder" >
 
+        <div  *ngFor="let eachTest of Testimonials" id = "cardview" class="card card-image mb-3" >
+          <span>'{{eachTest.content}}'</span>
+          <br>
+          <span>-{{eachTest.userName}}</span>
+        </div>
+    <!-- Card -->
+    
+    <!-- Card -->
+    </div>
+
+    <div id="myModal" class="modal" #myModal>
+
+        <!-- Modal content -->
+        <div class="modal-content animate">
+            <form >
+          <span class="close" (click)="closeTest()">&times;</span>
+          <label for="content"><b>Testimonial</b></label>
+          <input type="text" placeholder="Write your review" name="content" #content required>
+          <button type="submit" (click)="addTestimonial(content.value)" >Testify</button>
+        </form>
+        </div>  
+      
+      </div>
+
+    <button class="float" id="add" (click)="addTest()">
+        <i class="fa fa-plus my-float"></i>
+    </button>
 </div>
+

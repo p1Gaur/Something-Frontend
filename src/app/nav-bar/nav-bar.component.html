@@ -8,6 +8,7 @@
   <div *ngIf="isLoggedIn$ | async" class = "welcome">
       <h4> Welcome User </h4>
       <a class = "w3-button" routerLink = "/cart">CART</a> 
+      <a class = "w3-button" routerLink = "/order">ORDERS</a> 
       <button mat-raised-button color="warn" (click) = "logOut()">Logout</button>
   </div>
     <div *ngIf="!(isLoggedIn$ | async)" >

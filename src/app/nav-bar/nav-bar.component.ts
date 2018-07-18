@@ -14,7 +14,7 @@ export class NavBarComponent implements OnInit {
 
   
   
-  isLoggedIn$: Observable<boolean>;
+  isLoggedIn$: Observable<boolean>=this.authService.isLoggedIn;
   LoggedIn : string = "";
   emailId : string;
   password : string;

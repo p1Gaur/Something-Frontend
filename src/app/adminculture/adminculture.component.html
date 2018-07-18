@@ -1,0 +1,12 @@
+<div class="back">
+  <div class="filterForm">
+    <div>
+      <label>Enter Culture Name To Be Added</label>
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)] = "culture.cultureName">
+      </mat-form-field>
+    </div>
+    <button mat-raised-button (click)="submitFilters()" [disabled]="isSubmitted">Submit</button>
+    <button mat-raised-button (click)="resetFilters()">Reset</button>
+  </div>
+</div>

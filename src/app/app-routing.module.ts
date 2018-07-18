@@ -14,6 +14,8 @@ import { ItemSelectComponent } from './item-select/item-select.component';
 import { UserregistrationComponent } from './userregistration/userregistration.component';
 import { HomeComponent } from './home/home.component';
 import { CartComponent } from './cart/cart.component';
+import { AdmincultureComponent } from './adminculture/adminculture.component';
+import { AdmineventsComponent } from './adminevents/adminevents.component';
 import { OrdersComponent } from './orders/orders.component';
 
 const routes: Routes = [
@@ -30,8 +32,9 @@ const routes: Routes = [
   { path: 'ourservice/events/items', component: ItemSelectComponent },
   { path: 'signup', component: UserregistrationComponent },
   { path: 'cart' , component: CartComponent },
-  { path: 'order' , component:OrdersComponent }
-  
+  { path: 'addculture', component: AdmincultureComponent },
+  { path: 'addevent', component: AdmineventsComponent },
+  { path: 'order' , component:OrdersComponent }  
 ];
 
 @NgModule({

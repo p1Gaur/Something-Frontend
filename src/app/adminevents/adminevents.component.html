@@ -1,0 +1,16 @@
+<div class="back">
+  <div class="filterForm">
+    <div>
+        <label>Enter Culture Name to which the event is to be added</label>
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)] = "events.cultureName">
+        </mat-form-field>
+      <label>Enter Events Name To Be Added</label>
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)] = "events.eventName">
+      </mat-form-field>
+    </div>
+    <button mat-raised-button (click)="submitFilters()" [disabled]="isSubmitted">Submit</button>
+    <button mat-raised-button (click)="resetFilters()">Reset</button>
+  </div>
+</div>
